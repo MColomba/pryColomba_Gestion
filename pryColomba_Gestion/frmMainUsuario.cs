@@ -45,6 +45,7 @@ namespace pryColomba_Gestion
                 while (registro != null)
                 {
                     string[] campos = registro.Split('\t');
+                    //esto de aca da un error, averigua porque y como arreglarlo
                     dgvProveedores.Rows.Add(campos[0], campos[1], campos[2], campos[3],
                         campos[4], campos[5], campos[6], campos[7]);
                     registro = lector.ReadLine();
