@@ -34,11 +34,14 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.stsEstado = new System.Windows.Forms.StatusStrip();
+            this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.stsEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInicio
             // 
-            this.btnInicio.Location = new System.Drawing.Point(81, 171);
+            this.btnInicio.Location = new System.Drawing.Point(170, 156);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(75, 23);
             this.btnInicio.TabIndex = 0;
@@ -47,7 +50,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(162, 171);
+            this.btnCerrar.Location = new System.Drawing.Point(251, 156);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 1;
@@ -57,7 +60,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(37, 51);
+            this.lblUsuario.Location = new System.Drawing.Point(126, 36);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 2;
@@ -66,7 +69,7 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(40, 108);
+            this.lblContraseña.Location = new System.Drawing.Point(129, 93);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(61, 13);
             this.lblContraseña.TabIndex = 3;
@@ -74,23 +77,39 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 48);
+            this.textBox1.Location = new System.Drawing.Point(213, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 105);
+            this.textBox2.Location = new System.Drawing.Point(213, 90);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 5;
+            // 
+            // stsEstado
+            // 
+            this.stsEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblEstado});
+            this.stsEstado.Location = new System.Drawing.Point(0, 221);
+            this.stsEstado.Name = "stsEstado";
+            this.stsEstado.Size = new System.Drawing.Size(460, 22);
+            this.stsEstado.TabIndex = 6;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(118, 17);
+            this.lblEstado.Text = "toolStripStatusLabel1";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 243);
+            this.ClientSize = new System.Drawing.Size(460, 243);
+            this.Controls.Add(this.stsEstado);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblContraseña);
@@ -99,6 +118,9 @@
             this.Controls.Add(this.btnInicio);
             this.Name = "frmPrincipal";
             this.Text = "Inicio Sesion";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.stsEstado.ResumeLayout(false);
+            this.stsEstado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +134,8 @@
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.StatusStrip stsEstado;
+        private System.Windows.Forms.ToolStripStatusLabel lblEstado;
     }
 }
 
