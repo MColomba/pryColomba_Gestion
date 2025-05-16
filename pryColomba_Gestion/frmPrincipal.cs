@@ -28,5 +28,36 @@ namespace pryColomba_Gestion
         {
             this.Close();
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text != "")
+            {
+                if (txtContraseña.Text != "")
+                {
+                    objConexionBD = new clsUsuario();
+                    objConexionBD.ValidarUsuario(txtUsuario.Text, txtContraseña.Text);
+                    if (objConexionBD.estadoConexion == "Usuario EXISTE")
+                    {
+                        frmMainUsuario frmMainUsuario = new frmMainUsuario(txtUsuario.Text);
+                        frmMainUsuario.ShowDialog();
+                    }
+                    else
+                    {
+                        txtUsuario.Text = "";
+                        txtContraseña.Text = "";
+                        lblEstado.Text = "Error de inicio";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Falta la contraseña");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Falta el usuario");
+            }
+        }
     }
 }
